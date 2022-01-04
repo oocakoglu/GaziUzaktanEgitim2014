@@ -1,0 +1,93 @@
+﻿.mediaPlayerWrapper {
+    background-color: #2c363b;
+    border-radius: 6px;
+    height: 428px;
+    float: left;
+    overflow: hidden;
+}
+ 
+    .mediaPlayerWrapper > div {
+        float: left;
+        padding: 17px;
+    }
+ 
+.leftPanel {
+    width: 700px;
+}
+ 
+.mediaPlayerWrapper .playlistItem {
+    font: 14px "Segoe UI", Arial,Helvetica, sans-serif;
+    color: #b4bec3;
+    background-color: #2c363b;
+    text-decoration: none;
+    display: block;
+    width: 245px;
+    height: 50px;
+    margin: 12px 0 0 0;
+    border-radius: 3px;
+}
+ 
+    .mediaPlayerWrapper .playlistItem:hover {
+        background-color: #1E465A;
+        color: white;
+    }
+ 
+    .mediaPlayerWrapper .playlistItem span {
+        display: inline-block;
+        vertical-align: middle;
+        padding-bottom: 3px;
+        width: 110px;
+    }
+ 
+.mediaPlayerWrapper .selected,
+.mediaPlayerWrapper .selected:hover {
+    color: #fff;
+    background-color: #2e637d;
+    position: relative;
+}
+ 
+.playlistItem img {
+    vertical-align: middle;
+    margin-right: 11px;
+}
+ 
+.playIcon {
+    left: 37px;
+    margin-top: -11px;
+    position: absolute;
+    top: 50%;
+}
+ 
+.mediaPlayerWrapper .playlistAudioItem {
+    line-height: 44px;
+}
+ 
+.playlistAudioItem .playIcon {
+    position: static;
+    margin: -1px 6px 0 10px;
+}
+ 
+.playlistAudioItem span {
+    padding-left: 11px;
+}
+ 
+.playlistAudioItem.selected span {
+    padding-left: 0;
+}
+ 
+div.rmpFullscreen .rmpAudioWrapper {
+    background-color: #000000;
+    z-index: 2147483647 !important;
+}
+ 
+.qsf-overview-qr {
+    clear: both;
+}
+ 
+.tabStripMenu .rtsFirst {
+    width: 73px;
+}
+ 
+div.tabStripMenu .rtsLI {
+    font-size: 14px;
+}

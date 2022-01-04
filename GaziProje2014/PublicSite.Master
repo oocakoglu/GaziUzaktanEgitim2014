@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" EnableViewState = "False" AutoEventWireup="true" CodeBehind="PublicSite.master.cs" Inherits="GaziProje2014.PublicSite" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Style/css/PublicSite.css" rel="stylesheet" />
+    <link href="Style/css/PublicSite.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+ 
+       <div id="header">
+            <div id="logo">
+            </div>
+ 
+           <div id="girisPanel">
+               <table>                  
+                  <tr>
+                       <td>
+                           <asp:Label ID="Label1" runat="server" Text="Kullanıcı Adı:"></asp:Label><br />
+                           <asp:TextBox ID="TextBox1" runat="server" CssClass="txtbox"></asp:TextBox>
+                       </td>
+                       
+                       <td>
+                           <asp:Label ID="Label2" runat="server" Text="Şifre:"></asp:Label><br />
+                           <asp:TextBox ID="TextBox2" runat="server" CssClass="txtbox" ></asp:TextBox>
+                       </td>
+                       <td>
+                           <asp:Button ID="btnGiris" runat="server" Text="Giriş"  CssClass="Girisbutton"/>
+                       </td>
+                   </tr>                  
+               </table>
+           </div>
+        </div>
+
+        <div id="publiccontent">
+<%--            <div class="test">--%>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+<%--            </div>--%>
+        </div>
+
+<%--        <div class="test">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+--%>
+        <div id="publiccontentGolge">
+        </div>
+
+        <div id="footer">
+
+        </div>
+
+    </form>
+</body>
+</html>

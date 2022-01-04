@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaziProje2014", "GaziProje2014\GaziProje2014.csproj", "{247BC6F3-5BAB-4BA8-8F40-CDC0C1A4EC99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{777261AE-16F4-4A8B-A4DB-0F353BDC5A91}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://ocakoglu.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = GaziProje2014\\GaziProje2014.csproj
+		SccProjectName1 = GaziProje2014
+		SccLocalPath1 = GaziProje2014
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{247BC6F3-5BAB-4BA8-8F40-CDC0C1A4EC99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{247BC6F3-5BAB-4BA8-8F40-CDC0C1A4EC99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{247BC6F3-5BAB-4BA8-8F40-CDC0C1A4EC99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{247BC6F3-5BAB-4BA8-8F40-CDC0C1A4EC99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

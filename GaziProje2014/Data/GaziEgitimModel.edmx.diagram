@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="12c4e67f7fc7415face329e4faac79a3" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="GAZIModel.DuyuruKullanicilar" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="GAZIModel.Duyurular" Width="1.5" PointX="0.75" PointY="0.875" />
+        <EntityTypeShape EntityType="GAZIModel.HareketTipleri" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GAZIModel.Il" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="GAZIModel.Ilce" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="GAZIModel.KullaniciFormlar" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GAZIModel.KullaniciLogAna" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="GAZIModel.KullaniciLogDetail" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="GAZIModel.KullaniciTipleri" Width="1.5" PointX="9.75" PointY="0.75" />
+        <AssociationConnector Association="GAZIModel.FK_DuyuruKullanicilar_Duyurular" />
+        <EntityTypeShape EntityType="GAZIModel.Dersler" Width="1.5" PointX="7.875" PointY="9.875" />
+        <EntityTypeShape EntityType="GAZIModel.OgretmenDersler" Width="1.5" PointX="9.625" PointY="9.875" />
+        <EntityTypeShape EntityType="GAZIModel.OgrenciDersler" Width="1.5" PointX="0.75" PointY="3.25" />
+        <EntityTypeShape EntityType="GAZIModel.Formlar" Width="1.5" PointX="3.5" PointY="3.75" />
+        <EntityTypeShape EntityType="GAZIModel.SinavDetay" Width="1.5" PointX="2.75" PointY="11.75" />
+        <EntityTypeShape EntityType="GAZIModel.Sorular" Width="1.5" PointX="4.5" PointY="11.75" />
+        <EntityTypeShape EntityType="GAZIModel.OgrenciSinav" Width="3.25" PointX="7.375" PointY="12.75" />
+        <EntityTypeShape EntityType="GAZIModel.OgrenciSinavDetay" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="GAZIModel.Sinav" Width="1.5" PointX="12.375" PointY="9.75" />
+        <EntityTypeShape EntityType="GAZIModel.Kullanicilar" Width="1.5" PointX="13.375" PointY="3.75" />
+        <EntityTypeShape EntityType="GAZIModel.DersIcerikler" Width="1.5" PointX="11.375" PointY="13.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteCss.master.cs" Inherits="GaziProje2014.SiteCss" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>    
+    <%--<link href="Style/css/Site.css" rel="stylesheet" />--%>
+    <link href="Style/css/Site.css" rel="stylesheet" />
+    <link href="Style/css/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body runat="server" id="masterpageBody">
+    <form id="form1" runat="server">
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+            <Scripts>
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js"></asp:ScriptReference>
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js"></asp:ScriptReference>
+                <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryInclude.js"></asp:ScriptReference>
+            </Scripts>
+        </telerik:RadScriptManager>
+
+        <div id="header">
+            <div id="logo">
+            </div>
+            <%-- 
+            <div style="float: right; margin-top: 10px; margin-right: 10px;">
+                <asp:imagebutton runat="server" Id="CikisButton" ImageUrl="~/Style/Cikis.png" OnClick="CikisButton_Click"></asp:imagebutton>
+                <br />
+                <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="true" OnSkinChanged="QsfSkinManager_SkinChanged" />
+                <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
+            </div>   
+            --%>     
+                <asp:imagebutton runat="server" Id="CikisButton" ImageUrl="~/Style/Cikis.png" OnClick="CikisButton_Click"></asp:imagebutton>
+                <br />
+                <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="true" OnSkinChanged="QsfSkinManager_SkinChanged" />
+                <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
+        </div>
+
+        <div id="leftMenu">
+
+               <telerik:RadPanelBar runat="server" ID="RadPanelBar1" Height="100%" Width="100%" ExpandMode="FullExpandedItem" CssClass="MenuBar">
+               </telerik:RadPanelBar>
+
+        </div>
+
+        <div id="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="footer">
+
+        </div>
+
+        <telerik:RadNotification ID="RadNotification1" runat="server" EnableRoundedCorners="true"
+            EnableShadow="true" Text="Sample content" Title="Bilgilendirme" Width="300" Height="100">
+        </telerik:RadNotification>
+
+        <script src="/LCSK/assets/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+        <script src="/LCSK/assets/js/jquery.signalR-2.1.1.min.js" type="text/javascript"></script>
+        <script src="/signalr/hubs" type="text/javascript"></script>
+        <script src="/LCSK/chat.js" type="text/javascript"></script>
+
+    </form>
+</body>
+</html>

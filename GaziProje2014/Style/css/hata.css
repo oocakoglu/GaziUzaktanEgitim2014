@@ -1,0 +1,46 @@
+﻿body {
+	margin: 0px;
+	background-color: #313131;
+}
+#tasiyici {
+	width: 480px;
+	margin: 0px auto 0px auto;
+}
+#avize {
+	background-image: url('../images/avize.png');
+	width: 477px;
+	height: 459px;
+}
+.aktif {
+	background-image: url('../images/acik.png');
+	width: 477px;
+	height: 459px;
+	visibility: hidden;
+}
+.isikac {
+	visibility: visible;
+}
+.ackapa {
+	margin: 0px auto 0px auto;
+	width: 180px;
+	height: 66px;
+	background-image: url('../images/ackapa.gif');
+}
+.acik {
+	background-image: url('../images/ackapa.gif');
+	background-position: 0px -66px;
+}
+#metin {
+	text-align: center;
+	padding-top: 200px;
+	font-weight: bold;
+	font-size: 30pt;
+	color: #7f7f7f;
+	text-shadow: 1px 1px #000000;
+}
+p {
+	margin: 0px;
+	padding: 0px;
+	font-size: 100pt;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}

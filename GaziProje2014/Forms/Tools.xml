@@ -1,0 +1,25 @@
+﻿<root>
+     <modules>
+          <module name="RadEditorDomInspector" dockingZone="Module" enabled="true" visible="true" dockable="true" />
+          <module name="RadEditorNodeInspector" dockingZone="Module" enabled="true" visible="false" dockable="true" />
+          <module name="RadEditorHtmlInspector" dockingZone="Module" enabled="true" visible="false" dockable="true" />
+     </modules>
+     <tools>
+          <tool name="FormatPainter" />
+          <tool separator="true"/>
+          <tool name="Undo"/>
+          <tool name="Redo"/>
+          <tool separator="true"/>
+          <tool name="Bold"/>
+          <tool name="Italic"/>
+          <tool name="Underline"/>
+          <tool name="Strikethrough"/>
+          <tool name="Subscript"/>
+          <tool name="Superscript"/>
+          <tool name="ForeColor"/>
+          <tool name="BackColor"/>
+          <tool name="FormatBlock" />
+          <tool name="ApplyClass" />
+          <tool name="ModuleManager" />
+     </tools>
+</root>

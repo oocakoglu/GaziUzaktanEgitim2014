@@ -1,0 +1,66 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteCss.Master" AutoEventWireup="true" CodeBehind="OgretmenDersSecim.aspx.cs" Inherits="GaziProje2014.Forms.OgretmenDersSecim" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
+    <telerik:RadAjaxPanel ID="RadAjaxPanel1" runat="server" >      
+    <div class="contentUst40">
+        <table class="tdTablo">
+            <tr>
+                <td class="tdCellBaslik">Ders Adı :</td>
+                <td class="tdCellIcerik"><telerik:RadTextBox ID="txtDersAdi" runat="server"></telerik:RadTextBox></td>
+                <td class="tdCellBaslik">  
+                <telerik:RadButton ID="btnSorgula" runat="server" Text="Sorgula">
+                </telerik:RadButton> 
+                </td>                                                           
+            </tr>
+        </table>
+    </div>
+    <div class="contentUst40Golge">
+    </div>
+
+    <div class="contentOrta40x40">         
+        <telerik:RadGrid ID="grdOgretmenDersSecim" runat="server" >
+            <ClientSettings  EnableRowHoverStyle="true">
+                <Selecting AllowRowSelect="True"></Selecting>
+               <%-- <ClientEvents OnGridCreated="gridCreated" />--%>
+            </ClientSettings>
+
+            <MasterTableView AutoGenerateColumns="False" DataKeyNames="DersId" Height="100%" TableLayout="Fixed">
+                <Columns>
+                    <telerik:GridTemplateColumn UniqueName="chkTemplateColumn" Reorderable="False" Groupable="False">
+                        <ItemTemplate>
+                            <asp:CheckBox ID="chkOgretmenOnay"  runat="server" AutoPostBack="False"></asp:CheckBox>
+                        </ItemTemplate>
+                        <HeaderStyle Width="70px"/>
+                    </telerik:GridTemplateColumn>
+
+                    <telerik:GridBoundColumn DataField="DersId" DataType="System.Int32" FilterControlAltText="Filter DersId column" HeaderText="DersId" ReadOnly="True" SortExpression="DersId" UniqueName="DersId" Display="False">
+                    </telerik:GridBoundColumn>
+
+                    <telerik:GridBoundColumn DataField="DersAdi" FilterControlAltText="Filter DersAdi column" HeaderText="DersAdi" SortExpression="DersAdi" UniqueName="DersAdi">
+                        <ColumnValidationSettings>
+                            <ModelErrorMessage Text="" />
+                        </ColumnValidationSettings>
+                        <HeaderStyle Width="360px"/>
+                    </telerik:GridBoundColumn>
+
+                    <telerik:GridBoundColumn DataField="DersAciklama" FilterControlAltText="Filter DersAciklama column" HeaderText="DersAciklama" SortExpression="DersAciklama" UniqueName="DersAciklama">
+                        <ColumnValidationSettings>
+                            <ModelErrorMessage Text="" />
+                        </ColumnValidationSettings>
+                    </telerik:GridBoundColumn>
+                            
+                </Columns>
+            </MasterTableView>
+        </telerik:RadGrid>
+    </div>          
+    <div class="contentAlt30">
+        <telerik:RadButton Width="100px" ID="btnDersEkle" runat="server" Text="Dersleri Seç" OnClick="btnOgretmenDersSec_Click"></telerik:RadButton>
+    </div>
+    <div class="contentAlt30Golge"> 
+    </div>
+    </telerik:RadAjaxPanel>
+
+
+</asp:Content>

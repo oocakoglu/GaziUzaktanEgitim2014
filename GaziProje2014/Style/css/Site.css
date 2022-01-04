@@ -1,0 +1,323 @@
+﻿
+
+    #logo {
+        /*margin-top: 5px;
+        margin-left: 20px;
+        background-image: url('/Style/Images/logo.png');
+        width: 350px;
+        height: 70px;
+        float: left;
+        background-repeat: no-repeat;*/
+        top:15px;
+        left:30px;
+        width:262px;
+        height:30px;
+        background-repeat:no-repeat;
+        background-image: url('/Style/Images/UEgitimLogo.png');        
+        position:absolute;
+    } 
+
+    #header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        /*background-image: url('/Style/Images/ust_Bar.png');*/
+        /*background-image: url('/Style/Images/ArkaPlan.jpg');*/
+        background-repeat: repeat-x;
+        text-align: right;
+        border-bottom:solid 1px black;
+    }
+
+    #footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 20px;
+        /*background-image: url('/Style/Images/pnl_alt.png');
+        background-repeat: repeat-x;*/
+        /*padding-top:10px;*/
+        padding-left: 10px;
+        font-weight: bold;
+        border-top:solid 1px black;
+    }
+
+    #leftMenu {
+        position: fixed;
+        top: 60px;
+        bottom: 20px;
+        left: 0px;
+        width: 250px;       
+        overflow: auto;
+        border-right:solid 1px black;  
+        
+    }
+
+    #content {
+        position: fixed;
+        top: 60px;
+        bottom: 20px;
+        left: 250px;
+        right: 0;
+        /*background-color: #F63;*/
+        overflow: auto;
+        /*opacity: 0.65; 
+        filter: alpha(opacity=65); 
+        background-color:white;*/            
+    }
+
+
+    .MenuBar
+    {
+        /*background-color:transparent !important;*/
+        position: absolute;
+        top: 0px;
+        bottom: 50px;
+        left: 0px;    
+        opacity: 0.9; 
+        filter: alpha(opacity=90);     
+    }
+
+   .contentUst40
+   {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height:40px;
+        color:white;
+        z-index: 1;
+   }  
+
+   .contentUst40Golge
+   {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height:40px;
+        background-color:black;
+        opacity: 0.5; 
+        filter: alpha(opacity=50); 
+   }
+
+    .contentUst70
+    {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height:70px; 
+        color:white;
+        z-index: 1;
+    }  
+
+    .contentUst70Golge
+    {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height:70px;
+        background-color:black;
+        opacity: 0.6; 
+        filter: alpha(opacity=60);  
+    }  
+
+   .contentUst110
+   {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height:110px;
+        color:white;
+        z-index: 1;
+   }  
+
+   .contentUst110Golge
+   {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height:110px;
+        background-color:black;
+        opacity: 0.6; 
+        filter: alpha(opacity=60);  
+   } 
+
+
+
+   .contentAlt30
+   {
+        height: 30px;
+        padding:5px;    
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;  
+        z-index: 1;   
+   }    
+
+   .contentAlt30Golge
+   {
+        height: 30px;
+        padding:5px;    
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        background-color:black;
+        opacity: 0.5; 
+        filter: alpha(opacity=50);  
+   }   
+
+
+    .contentOrta00x40 
+    {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 40px;      
+        overflow: scroll;
+        overflow-x:hidden;  
+        background-color:white;   
+        opacity: 0.9; 
+        filter: alpha(opacity=90);                
+    }
+
+    .contentOrta40x40 
+    {
+        position: absolute;
+        top: 40px;
+        left: 0px;
+        right: 0px;
+        bottom: 40px;   
+        overflow: scroll;
+        overflow-x:hidden; 
+        background-color:white;   
+        opacity: 0.9; 
+        filter: alpha(opacity=90);                     
+    }
+
+    .contentOrta110x00 
+    {
+        position: absolute;
+        top: 110px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;   
+        background-color:white;   
+        opacity: 0.9; 
+        filter: alpha(opacity=90);                       
+    }
+
+    .contentOrta70x40 
+    {
+        position: absolute;
+        top: 70px;
+        left: 0px;
+        right: 0px;
+        bottom: 40px;
+        background-color:white;   
+        opacity: 0.9; 
+        filter: alpha(opacity=90);          
+    }
+
+    .contentOrtaSol250 
+    {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        width: 250px;        
+    }
+
+    .contentOrtaSag250 
+    {
+        position: absolute;
+        top: 0px;
+        left: 250px;
+        bottom: 0px;
+        right: 0px;
+    }
+
+
+    .tdTablo
+    {
+        padding-top:10px;
+        padding-left:10px;
+    } 
+
+    .tdCellIcerik
+    {
+        width:100px;
+    }  
+
+   .YetkiBaslikYazi
+   {
+        font-size:medium;
+        font-weight:bold; 
+    }
+
+    .Doldur 
+    {
+       height: 100%;
+    }
+
+    .clear 
+    {
+    clear: both;
+    }
+
+    p.MsoNormal
+    {
+        margin-top: 0cm;
+        margin-right: 0cm;
+        margin-bottom: 10.0pt;
+        margin-left: 0cm;
+        line-height: 115%;
+        font-size: 11.0pt;
+        font-family: Calibri;
+    }
+    .DuyuruContent
+    {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;   
+        overflow: scroll;
+        overflow-x:hidden; 
+        background-color:white;   
+        opacity: 0.7; 
+        filter: alpha(opacity=70); 
+        padding:20px; 
+    }
+    
+    .Buttons
+    {
+    }
+
+    .formElement
+    {
+        background-color:red;
+        position:relative;
+    }
+
+   .DosyaYoneticisi
+   {  
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;   
+
+        background-color:white;   
+        opacity: 0.85; 
+        filter: alpha(opacity=85); 
+   } 
