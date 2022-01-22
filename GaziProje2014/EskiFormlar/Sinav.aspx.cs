@@ -23,7 +23,7 @@ namespace GaziProje2014.Forms
             //    RadListViewDataItem item = e.Item as RadListViewDataItem;               
             //    int SoruId = Convert.ToInt32(item.GetDataKeyValue("SoruId").ToString());
 
-            //    GAZIEntities gaziEntities = new GAZIEntities();
+            //    GAZIDbContext gaziEntities = new GAZIDbContext();
             //    List<SinavCevaplar> sinavCevaplar = gaziEntities.SinavCevaplar.Where(q => q.SoruId == SoruId).ToList();
             //    ((RadioButtonList)e.Item.FindControl("rblCvp")).DataSource = sinavCevaplar;
             //    ((RadioButtonList)e.Item.FindControl("rblCvp")).DataValueField = "CevapId";

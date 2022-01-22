@@ -69,7 +69,7 @@ namespace GaziProje2014.Forms
                                + "<changefreq>never</changefreq>"
                                + "</url>";
 
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             var dersicerikler = gaziEntities.DersIcerikler.Where(q => q.GenelIcerik == true).ToList();           
             foreach (var item in dersicerikler)
 	        {

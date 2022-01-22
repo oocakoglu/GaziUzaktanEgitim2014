@@ -28,7 +28,7 @@ namespace GaziProje2014.Forms
             int kullaniciId = Convert.ToInt32(Session["KullaniciId"].ToString());
             int kullaniciTipiId = Convert.ToInt32(Session["KullaniciTipiId"].ToString());
 
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             var sinavListesi = (from s  in gaziEntities.Sinav
                                 from od in gaziEntities.OgretmenDersler.Where(q => q.OgretmenDersId == s.OgretmenDersId).DefaultIfEmpty()
                                 from d in gaziEntities.Dersler.Where(q => q.DersId == od.DersId).DefaultIfEmpty() 
@@ -75,8 +75,8 @@ namespace GaziProje2014.Forms
             if (grdSinavlar.SelectedItems.Count > 0)
             {
                 int sinavId = Convert.ToInt32(grdSinavlar.SelectedValues["SinavId"].ToString());
-                GAZIEntities gaziEntities = new GAZIEntities();
-                Data.Sinav sinav = gaziEntities.Sinav.Where(q => q.SinavId == sinavId).FirstOrDefault();                
+                GAZIDbContext gaziEntities = new GAZIDbContext();
+                Data.Models.Sinav sinav = gaziEntities.Sinav.Where(q => q.SinavId == sinavId).FirstOrDefault();                
                 gaziEntities.Sinav.Remove(sinav);
                 gaziEntities.SaveChanges();
                 grdSinavlarBind();

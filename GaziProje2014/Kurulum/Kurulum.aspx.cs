@@ -90,9 +90,7 @@ namespace GaziProje2014.Kurulum
             SqlCommand command = new SqlCommand(script, connection);
             SqlDataReader reader = command.ExecuteReader();
 
-            //<add name="GAZIConnectionString" connectionString="Data Source=mssql03.turhost.com;Initial Catalog=uegitim_gazi;Persist Security Info=True;User ID=uegitim_sa;Password=BAKU2005!" providerName="System.Data.SqlClient" />
-            //<add name="GAZIEntities" connectionString="metadata=res://*/Data.GaziEgitimModel.csdl|res://*/Data.GaziEgitimModel.ssdl|res://*/Data.GaziEgitimModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=mssql03.turhost.com;initial catalog=uegitim_gazi;persist security info=True;user id=uegitim_sa;password=BAKU2005!;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />  
-        }
+         }
 
         public static void Calistir(string sqlConnectionString)
         {
@@ -107,18 +105,7 @@ namespace GaziProje2014.Kurulum
                 var configuration = WebConfigurationManager.OpenWebConfiguration("~");
                 var section = (ConnectionStringsSection)configuration.GetSection("connectionStrings");
 
-                //section.ConnectionStrings["GAZIConnectionString"].ConnectionString = ConnectionStringGetir();
-                //section.ConnectionStrings["GAZIEntities"].ConnectionString = ConnectionEntitityGetir();
-                //configuration.Save();
-
                 Calistir(ConnectionStringGetir());
-                //string ConStr = ConfigurationManager.ConnectionStrings["GAZIConnectionString"].ConnectionString;
-                //SqlConnection bag = new SqlConnection(ConStr);
-                //bag.Open();
-
-                //SqlCommand command = new SqlCommand(queryString, ConStr);
-                //SqlDataReader reader = command.ExecuteReader();
-
             }
             txtDurum.Text = txtDurum.Text + ConnectionStringGetir() + "\n";
             txtDurum.Text = txtDurum.Text + ConnectionEntitityGetir() + "\n";
@@ -126,13 +113,6 @@ namespace GaziProje2014.Kurulum
         }
 
 
-        //public static SqlConnection CreateFarmaSqlConnection()
-        //{
-        //    string ConStr = ConfigurationManager.ConnectionStrings["GAZIConnectionString"].ConnectionString;
-        //    SqlConnection bag = new SqlConnection(ConStr);
-        //    bag.Open();
-        //    return bag;
-        //}
 
     }
 }

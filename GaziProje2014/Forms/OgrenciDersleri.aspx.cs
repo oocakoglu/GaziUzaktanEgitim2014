@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 using Telerik.Web.UI;
 
 namespace GaziProje2014.Forms
@@ -26,7 +27,7 @@ namespace GaziProje2014.Forms
 
         protected void btnDersleriOnayla_Click(object sender, EventArgs e)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
 
             foreach (GridDataItem item in grdOgrenciDersSecim.MasterTableView.Items)
             {
@@ -46,7 +47,7 @@ namespace GaziProje2014.Forms
 
         protected void btnDersleriSil_Click(object sender, EventArgs e)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
 
             foreach (GridDataItem item in grdOgrenciDersSecim.MasterTableView.Items)
             {
@@ -85,7 +86,7 @@ namespace GaziProje2014.Forms
         private void grdSecilenDerslerBind()
         {
             int kullaniciId = Convert.ToInt32(Session["KullaniciId"].ToString());
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
                         
             var dersSecimListesi = (from ogrc in gaziEntities.OgrenciDersler
                                     join od in gaziEntities.OgretmenDersler on ogrc.OgretmenDersId equals od.OgretmenDersId

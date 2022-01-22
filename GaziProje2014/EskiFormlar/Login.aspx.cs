@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 
 namespace GaziProje2014
 {
@@ -38,7 +39,7 @@ namespace GaziProje2014
                 string KullaniciAdi = txtKullaniciAdi.Value;
                 string KullaniciSifre = txtKullaniciSifre.Value;
 
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 Kullanicilar kullanici = gaziEntities.Kullanicilar.Where(q => q.KullaniciAdi == KullaniciAdi && q.KullaniciSifre == KullaniciSifre && q.Onay == true).FirstOrDefault();
 
                 if (kullanici != null)

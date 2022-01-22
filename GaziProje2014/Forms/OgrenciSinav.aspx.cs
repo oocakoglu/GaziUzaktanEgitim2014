@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 using Telerik.Web.UI;
 
 namespace GaziProje2014.Forms
@@ -28,7 +29,7 @@ namespace GaziProje2014.Forms
 
         protected void QsfSkinManager_SkinChanged(object sender, SkinChangedEventArgs e)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             int kullaniciId = Convert.ToInt32(Session["KullaniciId"].ToString());
             Kullanicilar kullanici = gaziEntities.Kullanicilar.Where(q => q.KullaniciId == kullaniciId).FirstOrDefault();
             kullanici.SkinName = e.Skin;
@@ -86,9 +87,9 @@ namespace GaziProje2014.Forms
 
         private void SinavSureGetir(int SinavId)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             int kullaniciId = Convert.ToInt32(Session["KullaniciId"].ToString());
-            Data.OgrenciSinav ogrenciSinav = gaziEntities.OgrenciSinav.Where(q => q.SinavId == SinavId && q.OgrenciId == kullaniciId).FirstOrDefault();
+            Data.Models.OgrenciSinav ogrenciSinav = gaziEntities.OgrenciSinav.Where(q => q.SinavId == SinavId && q.OgrenciId == kullaniciId).FirstOrDefault();
          
             if (ogrenciSinav != null)
             {
@@ -128,12 +129,12 @@ namespace GaziProje2014.Forms
 
         private void SinavaBasla(int SinavId)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
-            Data.Sinav sinav = gaziEntities.Sinav.Where(q => q.SinavId == SinavId).FirstOrDefault();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
+            Data.Models.Sinav sinav = gaziEntities.Sinav.Where(q => q.SinavId == SinavId).FirstOrDefault();
             int sinavSure = sinav.Sure.Value;
             int kullaniciId = Convert.ToInt32(Session["KullaniciId"].ToString());
 
-            Data.OgrenciSinav ogrenciSinav = new Data.OgrenciSinav();
+            Data.Models.OgrenciSinav ogrenciSinav = new Data.Models.OgrenciSinav();
             ogrenciSinav.SinavId = SinavId;
             ogrenciSinav.BaslamaZamani = DateTime.Now;
             ogrenciSinav.BitisZamani = DateTime.Now.AddMinutes(sinavSure);
@@ -152,7 +153,7 @@ namespace GaziProje2014.Forms
 
         private void SinavYukle(int SinavId)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             var sinavDetay = (from sd in gaziEntities.SinavDetay
                               where sd.SinavId == SinavId
                               join so in gaziEntities.Sorular on sd.SoruId equals so.SoruId
@@ -209,12 +210,12 @@ namespace GaziProje2014.Forms
         protected void btnSinaviBitir_Click(object sender, EventArgs e)
         {
             //OgrenciSinavDetayId            
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
 
             //** OgrenciSinavId
             int sinavId = Convert.ToInt32(hdnOgrenciSinavId.Value);
             int kullaniciId = Convert.ToInt32(Session["KullaniciId"].ToString());
-            Data.OgrenciSinav ogrenciSinav = gaziEntities.OgrenciSinav.Where(q => q.SinavId == sinavId && q.OgrenciId == kullaniciId).FirstOrDefault();
+            Data.Models.OgrenciSinav ogrenciSinav = gaziEntities.OgrenciSinav.Where(q => q.SinavId == sinavId && q.OgrenciId == kullaniciId).FirstOrDefault();
             ogrenciSinav.BitisZamani = DateTime.Now;
             
             

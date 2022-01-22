@@ -16,7 +16,7 @@ namespace GaziProje2014.Forms
             if (!IsPostBack)
             {
                 int kullaniciId = Convert.ToInt32(Session["KullaniciId"].ToString());
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
 
                 //** Öğrencinin daha önce seçtiği dersler
                 var dersSecimListesi = (from oc in gaziEntities.OgrenciDersler
@@ -62,7 +62,7 @@ namespace GaziProje2014.Forms
             {
                 int ogretmenDersId = Convert.ToInt32(ogretmenDersIdStr);
 
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 //** Konular Yukleniyor
                 var konular = (from di in gaziEntities.DersIcerikler
                                where di.OgretmenDersId == ogretmenDersId
@@ -82,7 +82,7 @@ namespace GaziProje2014.Forms
             {
                 int ogretmenDersId = Convert.ToInt32(ogretmenDersIdStr);
 
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 //** Konular Yukleniyor
                 var konular = (from di in gaziEntities.DersIcerikler
                                where di.OgretmenDersId == ogretmenDersId

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GaziProje2014 {
-    
-    
-    public partial class HizliGiris {
-        
+namespace GaziProje2014
+{
+
+
+    public partial class HizliGiris
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,16 +22,16 @@ namespace GaziProje2014 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
-        /// RadGrid1 control.
+        /// grdKullanici control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadGrid RadGrid1;
-        
+        protected global::Telerik.Web.UI.RadGrid grdKullanici;
+
         /// <summary>
         /// btnAdmin control.
         /// </summary>
@@ -38,16 +40,7 @@ namespace GaziProje2014 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAdmin;
-        
-        /// <summary>
-        /// SqlDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-        
+
         /// <summary>
         /// RadScriptManager1 control.
         /// </summary>

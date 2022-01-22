@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 
 namespace GaziProje2014.Forms
 {
@@ -17,7 +18,7 @@ namespace GaziProje2014.Forms
             if (!IsPostBack)
             {
                 int KullaniciId = Convert.ToInt32(Session["KullaniciId"].ToString());
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 string DokumanAdres = gaziEntities.Kullanicilar.Where(q => q.KullaniciId == KullaniciId).Select(q => q.DokumanAdres).SingleOrDefault();
 
                 if (DokumanAdres == null)

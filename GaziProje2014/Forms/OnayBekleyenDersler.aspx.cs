@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 using Telerik.Web.UI;
 
 namespace GaziProje2014
@@ -26,7 +27,7 @@ namespace GaziProje2014
 
         protected void btnSecilenleriOnayla_Click(object sender, EventArgs e)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
 
             foreach (GridDataItem item in grdOnayBekleyenDersler.MasterTableView.Items)
             {
@@ -45,7 +46,7 @@ namespace GaziProje2014
 
         protected void btnSecilenleriSil_Click(object sender, EventArgs e)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
 
             foreach (GridDataItem item in grdOnayBekleyenDersler.MasterTableView.Items)
             {
@@ -63,7 +64,7 @@ namespace GaziProje2014
 
         private void grdOnayBekleyenDerslerBind()
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             var onayBekleyenDersler = (from od in gaziEntities.OgretmenDersler
                                        join d in gaziEntities.Dersler on od.DersId equals d.DersId
                                        join k in gaziEntities.Kullanicilar on od.OgretmenId equals k.KullaniciId

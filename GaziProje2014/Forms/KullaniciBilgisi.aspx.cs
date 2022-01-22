@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 using Telerik.Web.UI;
 
 namespace GaziProje2014.Forms
@@ -24,7 +25,7 @@ namespace GaziProje2014.Forms
 
         private void FillForm(int kullaniciId)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
 
             Kullanicilar kullanicilar = gaziEntities.Kullanicilar.Where(q => q.KullaniciId == kullaniciId).FirstOrDefault();
             if (kullanicilar != null)
@@ -83,7 +84,7 @@ namespace GaziProje2014.Forms
         {
             if (cbIlAdi.SelectedValue != null)
             {
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 cbIlceAdi.SelectedValue = null;
                 int IlKodu = Convert.ToInt32(cbIlAdi.SelectedValue);
                 var ilce = gaziEntities.Ilce.Where(q => q.IlKodu == IlKodu).ToList();
@@ -122,7 +123,7 @@ namespace GaziProje2014.Forms
         protected void btnKaydet_Click(object sender, EventArgs e)
         {
             int KullaniciId = Convert.ToInt32(Session["KullaniciId"].ToString());
-            using (GAZIEntities gaziEntities = new GAZIEntities())
+            using (GAZIDbContext gaziEntities = new GAZIDbContext())
             {
                 Kullanicilar Kullanici = gaziEntities.Kullanicilar.Where(q => q.KullaniciId == KullaniciId).FirstOrDefault();
                 Kullanici.KullaniciTipi = Convert.ToInt32(cbKullaniciTipleri.SelectedValue);

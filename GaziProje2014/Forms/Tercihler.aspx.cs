@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 using Telerik.Web.UI;
 
 namespace GaziProje2014.Forms
@@ -17,6 +18,15 @@ namespace GaziProje2014.Forms
         }
 
 
+        protected void grdThemes_NeedDataSource(object source, RadListViewNeedDataSourceEventArgs e)
+        {
+            using (GAZIDbContext gaziEntities = new GAZIDbContext())
+            {
+                grdThemes.DataSource = gaziEntities.Temalar.ToList();
+                grdThemes.DataKeyNames = new string[]{"TemaId"};        
+            }            
+        }
+
 
         protected void btnTemaUygula_Click(object sender, System.EventArgs e)
         {
@@ -25,7 +35,7 @@ namespace GaziProje2014.Forms
             Label lblTemaPath = ((Label)Item.FindControl("lblTemaPath"));
             string backGround = lblTemaPath.Text;
 
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             int kullaniciId = Convert.ToInt32(Session["KullaniciId"].ToString());
             Kullanicilar kullanici = gaziEntities.Kullanicilar.Where(q => q.KullaniciId == kullaniciId).FirstOrDefault();
             kullanici.BackGround = backGround;
@@ -35,6 +45,6 @@ namespace GaziProje2014.Forms
             Response.Redirect("~/Forms/Tercihler.aspx");
         }
 
-        
+
     }
 }

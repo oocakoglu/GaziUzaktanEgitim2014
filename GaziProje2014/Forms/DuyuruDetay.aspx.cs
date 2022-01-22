@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 using Telerik.Web.UI;
 
 namespace GaziProje2014.Forms
@@ -15,7 +16,7 @@ namespace GaziProje2014.Forms
         {
             if (!IsPostBack)
             {
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 var kullaniciTipleri = (from kt in gaziEntities.KullaniciTipleri
                                         select new { kt.KullaniciTipId, kt.KullaniciTipAdi }).ToList();
 
@@ -32,7 +33,7 @@ namespace GaziProje2014.Forms
 
         private void FillForm(int duyuruId)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             Duyurular duyuru = (from d in gaziEntities.Duyurular
                                 where d.DuyuruId == duyuruId
                                 select d).FirstOrDefault();
@@ -60,7 +61,7 @@ namespace GaziProje2014.Forms
         protected void btnYayinla_Click(object sender, EventArgs e)
         {
             int KullaniciId = Convert.ToInt32(Session["KullaniciId"].ToString());
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             Duyurular duyurular = null;
             string mesaj = "";
             if (Request.QueryString["DuyuruId"] != null)

@@ -27,7 +27,7 @@ namespace GaziProje2014
                     string[] path = DosyaYolu.Split('/');
                     string urlName = path[2];
 
-                    GAZIEntities gaziEntities = new GAZIEntities();
+                    GAZIDbContext gaziEntities = new GAZIDbContext();
                     var ders = (from d in gaziEntities.DersIcerikler
                                 where d.GenelIcerik == true && d.UrlName == urlName
                                 select new {d.IcerikId, d.IcerikTip}).FirstOrDefault();

@@ -34,7 +34,7 @@ namespace GaziProje2014.Forms
             if (rdDersler.SelectedValue != "")
             {
                 int ogretmenDersId = Convert.ToInt32(rdDersler.SelectedValue);
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 var sorular = gaziEntities.Sorular.Where(q => q.OgretmenDersId == ogretmenDersId).ToList();
 
                 rdListSorular.DataSource = sorular;

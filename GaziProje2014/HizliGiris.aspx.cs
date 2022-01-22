@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
+using Telerik.Web.UI;
 
 namespace GaziProje2014
 {
@@ -15,13 +17,35 @@ namespace GaziProje2014
 
         }
 
+
+
+        protected void grdKullanici_NeedDataSource(object source, GridNeedDataSourceEventArgs e)
+        {
+            using (GAZIDbContext gaziEntities = new GAZIDbContext())
+            {
+                var data =
+                    from k in gaziEntities.Kullanicilar
+                    join kt in gaziEntities.KullaniciTipleri on k.KullaniciTipi equals kt.KullaniciTipId
+                    select new
+                    {
+                        KullaniciId = k.KullaniciId, // or pc.ProdId
+                        KullaniciTipId = kt.KullaniciTipId,
+                        KullaniciAdi = k.KullaniciAdi,
+                        KullaniciTipAdi = kt.KullaniciTipAdi,
+                        Adi = k.Adi,
+                        Soyadi = k.Soyadi
+                    };
+                grdKullanici.DataSource = data.ToList();
+            }
+        }
+
         protected void btnAdmin_Click(object sender, EventArgs e)
         {
-            if (RadGrid1.SelectedItems.Count > 0)
+            if (grdKullanici.SelectedItems.Count > 0)
             {
-                int kullaniciId = Convert.ToInt32(RadGrid1.SelectedValues["KullaniciId"].ToString());
+                int kullaniciId = Convert.ToInt32(grdKullanici.SelectedValues["KullaniciId"].ToString());
 
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 Kullanicilar kullanici = gaziEntities.Kullanicilar.Where(q => q.KullaniciId == kullaniciId).FirstOrDefault();
                 if (kullanici != null)
                 {

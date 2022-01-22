@@ -49,7 +49,7 @@ namespace GaziProje2014.Data
             var currentSession = HttpContext.Current.Session;
             int kullaniciTipiId = (int)currentSession["KullaniciTipiId"];
             int kullaniciId = (int)currentSession["KullaniciId"];
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             List<DersList> result;
 
             if (kullaniciTipiId == 1)

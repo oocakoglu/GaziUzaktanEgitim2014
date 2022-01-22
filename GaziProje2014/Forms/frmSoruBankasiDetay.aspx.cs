@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 using Telerik.Web.UI;
 
 namespace GaziProje2014.Forms
@@ -32,7 +33,7 @@ namespace GaziProje2014.Forms
 
         private void grdSorularBind()
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             if (hdnOgretmenDersId.Value != "")
             {
                 int dersId = Convert.ToInt32(hdnOgretmenDersId.Value);
@@ -52,7 +53,7 @@ namespace GaziProje2014.Forms
             {
                 lblBilgi.Text = "";
                 int soruId = (int)grdSorular.SelectedValues["SoruId"];
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
 
                 var sorular = gaziEntities.Sorular.Where(q => q.SoruId == soruId).FirstOrDefault();
 
@@ -157,7 +158,7 @@ namespace GaziProje2014.Forms
 
         protected void btnGuncelle_Click(object sender, EventArgs e)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             Sorular sorular = null;
             if ((hdnSoruId.Value != "") && (hdnSoruId.Value != "0"))
             {
@@ -218,7 +219,7 @@ namespace GaziProje2014.Forms
             if (grdSorular.SelectedItems.Count > 0)
             {
                 int soruId = (int)grdSorular.SelectedValues["SoruId"];
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 Sorular sorular = gaziEntities.Sorular.Where(x => x.SoruId == soruId).FirstOrDefault();
                 gaziEntities.Sorular.Remove(sorular);
                 gaziEntities.SaveChanges();

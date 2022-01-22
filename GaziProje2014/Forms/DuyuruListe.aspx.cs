@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 
 namespace GaziProje2014.Forms
 {
@@ -14,7 +15,7 @@ namespace GaziProje2014.Forms
         {
             if (!IsPostBack)
             {
-                GAZIEntities gaziEntities = new GAZIEntities();           
+                GAZIDbContext gaziEntities = new GAZIDbContext();           
                 var duyurular = (from d in gaziEntities.Duyurular
                                  join k in gaziEntities.Kullanicilar on d.DuyuruKayitEdenId equals k.KullaniciId
                                  select new { d.DuyuruId, d.DuyuruAdi, d.DuyuruTarihi, k.KullaniciId, k.Adi, k.Soyadi }).Take(100).ToList();
@@ -24,7 +25,7 @@ namespace GaziProje2014.Forms
         }
         protected void btnDuyuruListeSorgula_Click(object sender, EventArgs e)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             var duyurular = (from d in gaziEntities.Duyurular
                              join k in gaziEntities.Kullanicilar on d.DuyuruKayitEdenId equals k.KullaniciId
                              select new { d.DuyuruId, d.DuyuruAdi, d.DuyuruTarihi, k.KullaniciId, k.Adi, k.Soyadi });
@@ -57,7 +58,7 @@ namespace GaziProje2014.Forms
         { 
             if (RadGrid1.SelectedValues["DuyuruId"].ToString() != "")
             {
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 int duyuruId = Convert.ToInt32(RadGrid1.SelectedValues["DuyuruId"].ToString());
 
                 //** Önceki Kayıtkarı Temizle

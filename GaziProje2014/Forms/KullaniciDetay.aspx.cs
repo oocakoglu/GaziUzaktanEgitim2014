@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 using Telerik.Web.UI;
 
 namespace GaziProje2014.Forms
@@ -51,7 +52,7 @@ namespace GaziProje2014.Forms
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
 
             //** Kullanici Tipleri
             var kullaniciTipleri = gaziEntities.KullaniciTipleri.ToList();
@@ -122,7 +123,7 @@ namespace GaziProje2014.Forms
         {
             int KullaniciId = Convert.ToInt32(Request.QueryString["KullaniciId"]);
 
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
 
             if (KullaniciId > 0)
             {
@@ -177,7 +178,7 @@ namespace GaziProje2014.Forms
                 cbIlceAdi.SelectedValue = null;
                 int IlKodu = Convert.ToInt32(cbIlAdi.SelectedValue);
 
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 List<Ilce> ilce = gaziEntities.Ilce.Where(q => q.IlKodu == IlKodu).ToList();
 
                 //** Il Kodlari

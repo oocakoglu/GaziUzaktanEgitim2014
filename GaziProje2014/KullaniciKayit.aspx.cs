@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 using Telerik.Web.UI;
 
 namespace GaziProje2014.Pages
@@ -17,7 +18,7 @@ namespace GaziProje2014.Pages
         {
             if (!IsPostBack)
             {
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
 
                 //** Kullanıcı Tipi Id
                 cbKullaniciTipleri.DataSource = gaziEntities.KullaniciTipleri.Where(q => q.KullaniciTipDurum == true).ToList();
@@ -41,7 +42,7 @@ namespace GaziProje2014.Pages
         {
             if (VeriKontrol())
             {
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 Kullanicilar Kullanici = new Kullanicilar();
                 Kullanici.KullaniciTipi = Convert.ToInt32(cbKullaniciTipleri.SelectedValue);
                 Kullanici.KullaniciAdi = txtKullaniciAdi.Text;
@@ -87,7 +88,7 @@ namespace GaziProje2014.Pages
                 cbIlceAdi.SelectedValue = null;
                 int IlKodu = Convert.ToInt32(cbIlAdi.SelectedValue);
 
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 List<Ilce> ilce = gaziEntities.Ilce.Where(q => q.IlKodu == IlKodu).ToList();
 
                 //** Il Kodlari

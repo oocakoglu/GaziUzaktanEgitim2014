@@ -45,7 +45,7 @@ namespace GaziProje2014.Forms
 
         private void grdSoruBankasiBind()
         {
-           GAZIEntities gaziEntities = new GAZIEntities();
+           GAZIDbContext gaziEntities = new GAZIDbContext();
 
            string sqlStr = "SELECT od.OgretmenDersId, d.DersAdi, k.Adi + ' ' + k.Soyadi as Ogretmen, "
                         + "COUNT(si.SinavId) as SinavSayisi, "

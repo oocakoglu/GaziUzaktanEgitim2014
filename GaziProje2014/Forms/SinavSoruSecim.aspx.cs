@@ -41,7 +41,7 @@ namespace GaziProje2014.Forms
 
         private  void  grdSorularBind()
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             if (hdnOgretmenDersId.Value != "")
             {
                 int dersId = Convert.ToInt32(hdnOgretmenDersId.Value);
@@ -60,7 +60,7 @@ namespace GaziProje2014.Forms
             if (grdSorular.SelectedItems.Count > 0)
             {
                 int soruId = (int)grdSorular.SelectedValues["SoruId"];
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
 
                 var sorular = gaziEntities.Sorular.Where(q => q.SoruId == soruId).FirstOrDefault();
 
@@ -103,7 +103,7 @@ namespace GaziProje2014.Forms
         protected void btnTamam_Click(object sender, EventArgs e)
         {
             int sinavId = Convert.ToInt32(Request.QueryString["SinavId"]);
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
 
             foreach (GridDataItem item in grdSorular.MasterTableView.Items)
             {
@@ -115,7 +115,7 @@ namespace GaziProje2014.Forms
                     int KayitSayi = gaziEntities.SinavDetay.Where(q => q.SinavId == sinavId && q.SoruId == soruId).Count();
                     if (KayitSayi == 0)
                     {
-                        Data.SinavDetay sinavDetay = new Data.SinavDetay();
+                        Data.Models.SinavDetay sinavDetay = new Data.Models.SinavDetay();
                         sinavDetay.SoruId = soruId;
                         sinavDetay.SinavId = sinavId;
                         gaziEntities.SinavDetay.Add(sinavDetay);

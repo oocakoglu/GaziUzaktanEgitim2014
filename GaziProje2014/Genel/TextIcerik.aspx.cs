@@ -20,7 +20,7 @@ namespace GaziProje2014.Genel
                 {
                     int icerikId = Convert.ToInt32(Request.QueryString["id"]);
 
-                    GAZIEntities gaziEntities = new GAZIEntities();
+                    GAZIDbContext gaziEntities = new GAZIDbContext();
                     //DersIcerikler dersIcerikler = gaziEntities.DersIcerikler.Where(q => q.IcerikId == icerikId).FirstOrDefault();
                     string Icerik = gaziEntities.DersIcerikler.Where(q => q.IcerikId == icerikId).Select(q => q.IcerikText).SingleOrDefault();
 

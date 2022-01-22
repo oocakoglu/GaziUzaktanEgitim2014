@@ -7,63 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GaziProje2014.Forms {
-    
-    
-    public partial class Tercihler {
-        
+namespace GaziProje2014.Forms
+{
+
+
+    public partial class Tercihler
+    {
+
         /// <summary>
-        /// SqlDataSource1 control.
+        /// grdThemes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-        
-        /// <summary>
-        /// RadListView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadListView RadListView1;
-        
-        /// <summary>
-        /// itemPlaceholder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel itemPlaceholder;
-        
-        /// <summary>
-        /// lblTemaPath control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTemaPath;
-        
-        /// <summary>
-        /// imgSoruResim control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgSoruResim;
-        
-        /// <summary>
-        /// btnTemaUygula control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadButton btnTemaUygula;
+        protected global::Telerik.Web.UI.RadListView grdThemes;
     }
 }

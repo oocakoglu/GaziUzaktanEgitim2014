@@ -20,38 +20,21 @@
 
 
 
-    <telerik:RadGrid ID="RadGrid1" AutoGenerateEditColumn="True" runat="server" AllowAutomaticDeletes="True"
-        AllowAutomaticInserts="True" AllowAutomaticUpdates="True" DataSourceID="SqlDataSource1"
+    <telerik:RadGrid ID="grdDersler" AutoGenerateEditColumn="True" runat="server" AllowAutomaticDeletes="True"
+        OnNeedDataSource="grdDersler_NeedDataSource"
+        OnItemCommand ="grdDersler_ItemCommand" 
         AllowSorting="True" >
         <MasterTableView EditMode="PopUp" CommandItemDisplay="Top" DataKeyNames="DersId" AutoGenerateColumns="True">
-
-
-<%--            <Columns>
-                <telerik:GridBoundColumn DataField="DersId" DataType="System.Int32" FilterControlAltText="Filter DersId column" HeaderText="DersId" ReadOnly="True" SortExpression="DersId" UniqueName="DersId">
-                    <ColumnValidationSettings>
-                        <ModelErrorMessage Text="" />
-                    </ColumnValidationSettings>
-                </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn DataField="DersAdi" FilterControlAltText="Filter DersAdi column" HeaderText="DersAdi" SortExpression="DersAdi" UniqueName="DersAdi">
-                    <ColumnValidationSettings>
-                        <ModelErrorMessage Text="" />
-                    </ColumnValidationSettings>
-                </telerik:GridBoundColumn>
-                <telerik:GridBoundColumn DataField="DersAciklama" FilterControlAltText="Filter DersAciklama column" HeaderText="DersAciklama" SortExpression="DersAciklama" UniqueName="DersAciklama">
-                    <ColumnValidationSettings>
-                        <ModelErrorMessage Text="" />
-                    </ColumnValidationSettings>
-                </telerik:GridBoundColumn>
-            </Columns>--%>
-
 
             <EditFormSettings InsertCaption="Ders Ekle" CaptionFormatString="{0} Detayları"
                 CaptionDataField="DersAdi" EditFormType="Template" PopUpSettings-Modal="true"
                 PopUpSettings-Width="310px" PopUpSettings-Height="132px">
                 <FormTemplate>
-                   <div style="padding:10px;">
-
+                   <div style="padding:10px;">                     
                         <table>
+                            <tr>
+                                <input runat="server" type="hidden" id="dersId" name="dersId" value='<%# Eval("DersId") %>'/>                  
+                            </tr>
                             <tr>
                                 <td>Ders Adı
                                 </td>
@@ -95,23 +78,6 @@
         </ClientSettings>
     </telerik:RadGrid>
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GAZIConnectionString %>"
-        SelectCommand="SELECT [DersId], [DersAdi], [DersAciklama] FROM [Dersler]"
-        DeleteCommand="DELETE FROM [Dersler] WHERE [DersId] = @DersId"
-        InsertCommand="INSERT INTO [Dersler] ([DersAdi], [DersAciklama]) VALUES (@DersAdi, @DersAciklama)"
-        UpdateCommand="UPDATE [Dersler] SET [DersAdi] = @DersAdi, [DersAciklama] = @DersAciklama WHERE [DersId] = @DersId">
-        <DeleteParameters>
-            <asp:Parameter Name="DersId" Type="Int32" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="DersAdi" Type="String" />
-            <asp:Parameter Name="DersAciklama" Type="String" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="DersAdi" Type="String" />
-            <asp:Parameter Name="DersAciklama" Type="String" />
-            <asp:Parameter Name="DersId" Type="Int32" />
-        </UpdateParameters>
-    </asp:SqlDataSource>
+
 
 </asp:Content>

@@ -27,7 +27,7 @@ namespace GaziProje2014.Forms
         private void grdSinavlarBind()
         {
             int kullaniciId = Convert.ToInt32(Session["KullaniciId"].ToString());
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
 
             string sqlstr = "Select "
                            + "S.SinavId, S.SinavAdi, OS.OgrenciSinavId, "

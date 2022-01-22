@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 using Telerik.Web.UI;
 
 namespace GaziProje2014.Forms
@@ -13,7 +14,7 @@ namespace GaziProje2014.Forms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             if (!IsPostBack)
             {
                 grdSecilenDerslerBind();
@@ -28,7 +29,7 @@ namespace GaziProje2014.Forms
         protected void btnDersleriSil_Click(object sender, EventArgs e)
         {
             int kullaniciId = Convert.ToInt32(Session["KullaniciId"].ToString());
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             foreach (GridDataItem item in grdSecilenDersler.MasterTableView.Items)
             {
                 CheckBox chk = (CheckBox)item["chkTemplateColumn"].FindControl("chkOgretmenOnay");
@@ -45,7 +46,7 @@ namespace GaziProje2014.Forms
 
         protected void btnDersleriOnayla_Click(object sender, EventArgs e)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
 
             foreach (GridDataItem item in grdSecilenDersler.MasterTableView.Items)
             {
@@ -85,7 +86,7 @@ namespace GaziProje2014.Forms
         {
 
             int kullaniciId = Convert.ToInt32(Session["KullaniciId"].ToString());
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             var secilenDersler = (from od in gaziEntities.OgretmenDersler
                                   join d in gaziEntities.Dersler on od.DersId equals d.DersId
                                   where od.OgretmenId == kullaniciId

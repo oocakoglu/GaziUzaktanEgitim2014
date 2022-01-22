@@ -327,9 +327,12 @@
                     </div>
                 </EmptyDataTemplate>
             </telerik:RadListView>
-<%--            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GAZIConnectionString %>" SelectCommand="SELECT [Id], [Soru], [KullaniciId], [CvpSayisi], [DogruCvp], [KayitTrh], [Cvp1], [Cvp2], [Cvp3], [Cvp4], [ResimSoru] FROM [Sorular]"></asp:SqlDataSource>
---%>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GAZIConnectionString %>" DeleteCommand="DELETE FROM [Sorular] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Sorular] ([KullaniciId], [Soru], [CvpSayisi], [DogruCvp], [KayitTrh], [Cvp1], [Cvp2], [ResimSoru], [Cvp5], [Cvp4], [Cvp3]) VALUES (@KullaniciId, @Soru, @CvpSayisi, @DogruCvp, @KayitTrh, @Cvp1, @Cvp2, @ResimSoru, @Cvp5, @Cvp4, @Cvp3)" SelectCommand="SELECT [Id], [KullaniciId], [Soru], [CvpSayisi], [DogruCvp], [KayitTrh], [Cvp1], [Cvp2], [ResimSoru], [Cvp5], [Cvp4], [Cvp3] FROM [Sorular]" UpdateCommand="UPDATE [Sorular] SET [KullaniciId] = @KullaniciId, [Soru] = @Soru, [CvpSayisi] = @CvpSayisi, [DogruCvp] = @DogruCvp, [KayitTrh] = @KayitTrh, [Cvp1] = @Cvp1, [Cvp2] = @Cvp2, [ResimSoru] = @ResimSoru, [Cvp5] = @Cvp5, [Cvp4] = @Cvp4, [Cvp3] = @Cvp3 WHERE [Id] = @Id">
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:GAZIConnectionString %>" 
+            DeleteCommand="DELETE FROM [Sorular] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Sorular] ([KullaniciId], [Soru], [CvpSayisi], [DogruCvp], [KayitTrh], [Cvp1], [Cvp2], [ResimSoru], [Cvp5], [Cvp4], [Cvp3]) VALUES (@KullaniciId, @Soru, @CvpSayisi, @DogruCvp, @KayitTrh, @Cvp1, @Cvp2, @ResimSoru, @Cvp5, @Cvp4, @Cvp3)" 
+            SelectCommand="SELECT [Id], [KullaniciId], [Soru], [CvpSayisi], [DogruCvp], [KayitTrh], [Cvp1], [Cvp2], [ResimSoru], [Cvp5], [Cvp4], [Cvp3] FROM [Sorular]" 
+            UpdateCommand="UPDATE [Sorular] SET [KullaniciId] = @KullaniciId, [Soru] = @Soru, [CvpSayisi] = @CvpSayisi, [DogruCvp] = @DogruCvp, [KayitTrh] = @KayitTrh, [Cvp1] = @Cvp1, [Cvp2] = @Cvp2, [ResimSoru] = @ResimSoru, [Cvp5] = @Cvp5, [Cvp4] = @Cvp4, [Cvp3] = @Cvp3 WHERE [Id] = @Id">
             <DeleteParameters>
                 <asp:Parameter Name="Id" Type="Int64" />
             </DeleteParameters>

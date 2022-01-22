@@ -36,7 +36,7 @@ namespace GaziProje2014
 
             // RadAjaxPanel1.Alert(message);
 
-            //GAZIEntities gaziEntities = new GAZIEntities();
+            //GAZIDbContext gaziEntities = new GAZIDbContext();
             //gaziEntities.Duyuru
         }
     }

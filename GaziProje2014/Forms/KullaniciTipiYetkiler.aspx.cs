@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 using Telerik.Web.UI;
 
 namespace GaziProje2014.Forms
@@ -14,9 +15,9 @@ namespace GaziProje2014.Forms
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            {                
-                GAZIEntities gaziEntities = new GAZIEntities();
-                List<GaziProje2014.Data.KullaniciTipleri> kullaniciTipleri = gaziEntities.KullaniciTipleri.ToList();
+            {
+                GAZIDbContext gaziEntities = new GAZIDbContext();
+                List<GaziProje2014.Data.Models.KullaniciTipleri> kullaniciTipleri = gaziEntities.KullaniciTipleri.ToList();
                 RadGridKullaniciTipleri.DataSource = kullaniciTipleri;
                 RadGridKullaniciTipleri.DataBind();
             }
@@ -28,7 +29,7 @@ namespace GaziProje2014.Forms
             {
                
                 int secilikullaniciTipId = (int)RadGridKullaniciTipleri.SelectedValues["KullaniciTipId"];
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
 
                 //var kullaniciYetkiler = (from f in gaziEntities.Formlar
                 //                         join kf in gaziEntities.KullaniciFormlar on f.Id equals  kf.FormId
@@ -68,7 +69,7 @@ namespace GaziProje2014.Forms
             {
                 int PId = (int)((System.Data.DataRowView)(e.Item.DataItem)).Row.ItemArray[0];
 
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 var pform = gaziEntities.Formlar.Where(q => q.Id == PId).FirstOrDefault();
 
                 GridGroupHeaderItem hitem = (GridGroupHeaderItem)e.Item;
@@ -82,7 +83,7 @@ namespace GaziProje2014.Forms
 
         protected void btnKaydet_Click(object sender, EventArgs e)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             int secilikullaniciTipId = (int)RadGridKullaniciTipleri.SelectedValues["KullaniciTipId"];
 
             foreach (GridDataItem item in grdYetkiler.MasterTableView.Items)
@@ -90,8 +91,8 @@ namespace GaziProje2014.Forms
                 CheckBox chk = (CheckBox)item["chkTemplateColumn"].FindControl("chkYetki");
                 int formId = Convert.ToInt32(item["Id"].Text);
                 //int kullaniciTipiId = Convert.ToInt32(item["KullaniciTipiId"].Text);
-                
-                KullaniciFormlar kullaniciFormlar = gaziEntities.KullaniciFormlar.Where(q => q.FormId == formId && q.KullaniciTipiId == secilikullaniciTipId).FirstOrDefault();                
+
+                GaziProje2014.Data.Models.KullaniciFormlar kullaniciFormlar = gaziEntities.KullaniciFormlar.Where(q => q.FormId == formId && q.KullaniciTipiId == secilikullaniciTipId).FirstOrDefault();                
                 if (kullaniciFormlar == null)
                 {
                     kullaniciFormlar = new KullaniciFormlar();

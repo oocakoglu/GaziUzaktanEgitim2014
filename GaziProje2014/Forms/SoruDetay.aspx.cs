@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 using Telerik.Web.UI;
 
 namespace GaziProje2014.Forms
@@ -14,7 +15,7 @@ namespace GaziProje2014.Forms
     {
         private void FillForm(int SoruId)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
 
             //** Ana Bilgi
             var soru = gaziEntities.Sorular.Where(q => q.SoruId == SoruId).FirstOrDefault();
@@ -77,7 +78,7 @@ namespace GaziProje2014.Forms
                 {
                     if (Session["SoruSinavId"] != null)
                     {
-                        GAZIEntities gaziEntities = new GAZIEntities();
+                        GAZIDbContext gaziEntities = new GAZIDbContext();
                         int sinavId = Convert.ToInt32(Session["SoruSinavId"].ToString());
                         string dersId = gaziEntities.Sinav.Where(q => q.SinavId == sinavId).Select(q => q.OgretmenDersId).SingleOrDefault().ToString();
                         rdDersler.SelectedValue = dersId;
@@ -131,7 +132,7 @@ namespace GaziProje2014.Forms
         {
             if (VeriKontrol())
             {
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 Sorular sorular;
 
                 if (Session["SoruId"] != null)
@@ -177,11 +178,11 @@ namespace GaziProje2014.Forms
                 {
                     int sinavId = Convert.ToInt32(Session["SoruSinavId"].ToString());
                     int soruId = sorular.SoruId;
-                    Data.SinavDetay sinavDetay;
+                    Data.Models.SinavDetay sinavDetay;
                     sinavDetay = gaziEntities.SinavDetay.Where(q => q.SinavId == sinavId && q.SoruId == soruId).FirstOrDefault();
                     if (sinavDetay == null)
                     {
-                        sinavDetay = new Data.SinavDetay();
+                        sinavDetay = new Data.Models.SinavDetay();
                         sinavDetay.SoruId = soruId;
                         sinavDetay.SinavId = sinavId;
                         gaziEntities.SinavDetay.Add(sinavDetay);

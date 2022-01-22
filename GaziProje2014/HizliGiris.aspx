@@ -11,11 +11,13 @@
     <div>
     
         
-     <telerik:RadGrid ID="RadGrid1" runat="server" CellSpacing="-1" DataSourceID="SqlDataSource1" GridLines="Both" AllowMultiRowSelection="false">
+     <telerik:RadGrid ID="grdKullanici" runat="server" CellSpacing="-1"       
+         OnNeedDataSource="grdKullanici_NeedDataSource"
+         GridLines="Both" AllowMultiRowSelection="false">
             <ClientSettings>
                 <Selecting AllowRowSelect="True" />
             </ClientSettings>
-            <MasterTableView AutoGenerateColumns="False" DataKeyNames="KullaniciId,KullaniciTipId, KullaniciAdi" DataSourceID="SqlDataSource1">
+            <MasterTableView AutoGenerateColumns="False" DataKeyNames="KullaniciId,KullaniciTipId, KullaniciAdi">
                 <Columns>
                     <telerik:GridBoundColumn DataField="KullaniciId" DataType="System.Int32" FilterControlAltText="Filter KullaniciId column" HeaderText="KullaniciId" ReadOnly="True" SortExpression="KullaniciId" UniqueName="KullaniciId">
                         <ColumnValidationSettings>
@@ -54,10 +56,7 @@
             </MasterTableView>
         </telerik:RadGrid>
         
-        <asp:Button ID="btnAdmin" runat="server" OnClick="btnAdmin_Click" Text="Admin" />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GAZIConnectionString %>" SelectCommand="select KullaniciId, KullaniciTipId, KullaniciAdi, KullaniciTipAdi, Adi, Soyadi from Kullanicilar K
-INNER JOIN KullaniciTipleri KT ON K.KullaniciTipi = KT.KullaniciTipId"></asp:SqlDataSource>
-       
+        <asp:Button ID="btnAdmin" runat="server" OnClick="btnAdmin_Click" Text="Admin" />       
         <telerik:RadScriptManager ID="RadScriptManager1" runat="server"></telerik:RadScriptManager>
 
     </div>

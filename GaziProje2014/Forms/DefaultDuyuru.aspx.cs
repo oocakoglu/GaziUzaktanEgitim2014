@@ -15,7 +15,7 @@ namespace GaziProje2014.Forms
         {
             int KullaniciTipiId = Convert.ToInt32(Session["KullaniciTipiId"].ToString());
 
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             var duyurular = (from d in gaziEntities.Duyurular                           
                              join k in gaziEntities.DuyuruKullanicilar on d.DuyuruId equals k.DuyuruId
                              where k.KullaniciTipiId == KullaniciTipiId

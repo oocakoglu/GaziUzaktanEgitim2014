@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 using Telerik.Web.UI;
 
 namespace GaziProje2014.Forms
@@ -16,7 +17,7 @@ namespace GaziProje2014.Forms
             if (!IsPostBack)
             {
                 int kullaniciId = Convert.ToInt32(Session["KullaniciId"].ToString());
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
 
                 //** Öğretmenin daha önce seçtiği dersler
                 var dersSecimListesi = (from od in gaziEntities.OgretmenDersler
@@ -53,7 +54,7 @@ namespace GaziProje2014.Forms
             {
                 int ogretmenDersId = Convert.ToInt32(ogretmenDersIdStr);
 
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 //** Konular Yukleniyor
                 var konular = (from di in gaziEntities.DersIcerikler
                                where di.OgretmenDersId == ogretmenDersId
@@ -74,7 +75,7 @@ namespace GaziProje2014.Forms
             {
                 int ogretmenDersId = Convert.ToInt32(ogretmenDersIdStr);
 
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 //** Konular Yukleniyor
                 var konular = (from di in gaziEntities.DersIcerikler
                                where di.OgretmenDersId == ogretmenDersId
@@ -103,7 +104,7 @@ namespace GaziProje2014.Forms
         {
             if (dersIcerikTreeList.SelectedItems.Count > 0)
             {
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 string icerikIdStr = dersIcerikTreeList.SelectedItems[0].GetDataKeyValue("IcerikId").ToString();
                 int icerikId = Convert.ToInt32(icerikIdStr);
                 List<DersIcerikler> dersIcerikler = gaziEntities.DersIcerikler.Where(q => q.IcerikPId == icerikId || q.IcerikId == icerikId).ToList();

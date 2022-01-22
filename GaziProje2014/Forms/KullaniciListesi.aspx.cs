@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 using Telerik.Web.UI;
 
 namespace GaziProje2014.Forms
@@ -84,7 +85,7 @@ namespace GaziProje2014.Forms
         {
             if (RadGrid1.SelectedItems.Count > 0)
             {
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 int secilenKullaniciId = Convert.ToInt32(RadGrid1.SelectedValues["KullaniciId"].ToString());
                 Kullanicilar kullanicilar = gaziEntities.Kullanicilar.Where(q => q.KullaniciId == secilenKullaniciId).FirstOrDefault();
                 gaziEntities.Kullanicilar.Remove(kullanicilar);

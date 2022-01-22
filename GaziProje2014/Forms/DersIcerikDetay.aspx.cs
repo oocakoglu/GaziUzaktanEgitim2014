@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 
 namespace GaziProje2014.Forms
 {
@@ -13,7 +14,7 @@ namespace GaziProje2014.Forms
     {
         private void FillForm(int icerikId)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             DersIcerikler dersIcerik = gaziEntities.DersIcerikler.Where(q => q.IcerikId == icerikId).FirstOrDefault();
 
             //**Dersler Yukleniyor (Tek Ders)
@@ -77,7 +78,7 @@ namespace GaziProje2014.Forms
 
         private void CheckDokumanAdres(int kullaniciId)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
 
             //** Ogretmen Path
             string DokumanAdres = gaziEntities.Kullanicilar.Where(q => q.KullaniciId == kullaniciId).Select(q => q.DokumanAdres).SingleOrDefault();
@@ -117,7 +118,7 @@ namespace GaziProje2014.Forms
                 }
                 else
                 {
-                    GAZIEntities gaziEntities = new GAZIEntities();
+                    GAZIDbContext gaziEntities = new GAZIDbContext();
                     if (kullaniciId == 1)
                     {
                         //**Dersler Yukleniyor (Tek Ders)                        
@@ -193,7 +194,7 @@ namespace GaziProje2014.Forms
 
         protected void btnKaydet_Click(object sender, EventArgs e)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             DersIcerikler dersIcerikler;
             if (Session["DersIcerikId"] != null)
             {
@@ -256,7 +257,7 @@ namespace GaziProje2014.Forms
         {
             if (Session["DersIcerikId"] != null)
             {
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 int icerikId = Convert.ToInt32(Session["DersIcerikId"].ToString());
                 List<DersIcerikler> dersIcerikler = gaziEntities.DersIcerikler.Where(q => q.IcerikPId == icerikId || q.IcerikId == icerikId).ToList();
                 foreach (DersIcerikler dersIcerik in dersIcerikler)
@@ -286,7 +287,7 @@ namespace GaziProje2014.Forms
             string ogretmenDersIdStr = rdDersler.SelectedValue;
             int ogretmenDersId = Convert.ToInt32(ogretmenDersIdStr);
 
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             //** Konular Yukleniyor
             var konular = (from di in gaziEntities.DersIcerikler
                            where di.OgretmenDersId == ogretmenDersId
@@ -309,7 +310,7 @@ namespace GaziProje2014.Forms
             if (Session["DersIcerikId"] != null)
                 icerikId = Convert.ToInt32(Session["DersIcerikId"].ToString());
 
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             int UrlKontrol = gaziEntities.DersIcerikler.Where(q => q.UrlName == DisUrl && q.IcerikId != icerikId).Count();
             if (UrlKontrol == 0)
             {

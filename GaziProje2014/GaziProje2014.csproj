@@ -309,23 +309,6 @@
     <Content Include="Style\information.png" />
     <Content Include="Style\js\jquery.js" />
     <Content Include="SiteCss.Master" />
-    <EntityDeploy Include="Data\GaziEgitimModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>GaziEgitimModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Data\GaziEgitimModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>GaziEgitimModel.edmx</DependentUpon>
-      <LastGenOutput>GaziEgitimModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Data\GaziEgitimModel.edmx.diagram">
-      <DependentUpon>GaziEgitimModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Data\GaziEgitimModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>GaziEgitimModel.edmx</DependentUpon>
-      <LastGenOutput>GaziEgitimModel.cs</LastGenOutput>
-    </Content>
     <Content Include="packages.config" />
     <Content Include="Dll\Telerik.Web.Device.Detection.dll.pec2bac" />
     <Content Include="Dll\Telerik.Web.UI.dll.pec2bac" />
@@ -353,82 +336,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Common.cs" />
-    <Compile Include="Data\ContextManager.cs" />
-    <Compile Include="Data\DersIcerikler.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Dersler.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\DuyuruKullanicilar.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Duyurular.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Formlar.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\GaziEgitimModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GaziEgitimModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\GaziEgitimModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\GaziEgitimModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GaziEgitimModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Data\HareketTipleri.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Il.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Ilce.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\KullaniciFormlar.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Kullanicilar.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\KullaniciLogAna.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\KullaniciLogDetail.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\KullaniciTipleri.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\OgrenciDersler.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\OgrenciSinav.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\OgrenciSinavDetay.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\OgretmenDersler.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Sinav.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\SinavDetay.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Sorular.cs">
-      <DependentUpon>GaziEgitimModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Data\GAZIDbContext.cs" />
+    <Compile Include="Data\Models\DersIcerikler.cs" />
+    <Compile Include="Data\Models\Dersler.cs" />
+    <Compile Include="Data\Models\DuyuruKullanicilar.cs" />
+    <Compile Include="Data\Models\Duyurular.cs" />
+    <Compile Include="Data\Models\Formlar.cs" />
+    <Compile Include="Data\Models\HareketTipi.cs" />
+    <Compile Include="Data\Models\Il.cs" />
+    <Compile Include="Data\Models\Ilce.cs" />
+    <Compile Include="Data\Models\KullaniciFormlar.cs" />
+    <Compile Include="Data\Models\Kullanicilar.cs" />
+    <Compile Include="Data\Models\KullaniciLogAna.cs" />
+    <Compile Include="Data\Models\KullaniciLogDetail.cs" />
+    <Compile Include="Data\Models\KullaniciTipleri.cs" />
+    <Compile Include="Data\Models\OgrenciDersler.cs" />
+    <Compile Include="Data\Models\OgrenciSinav.cs" />
+    <Compile Include="Data\Models\OgrenciSinavDetay.cs" />
+    <Compile Include="Data\Models\OgretmenDersler.cs" />
+    <Compile Include="Data\Models\Sinav.cs" />
+    <Compile Include="Data\Models\SinavDetay.cs" />
+    <Compile Include="Data\Models\Sorular.cs" />
+    <Compile Include="Data\Models\Temalar.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -855,6 +784,7 @@
     <Compile Include="LCSK\Agent.cs" />
     <Compile Include="LCSK\ChatHub.cs" />
     <Compile Include="LCSK\Startup.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pages\Deneme.aspx.cs">
       <DependentUpon>Deneme.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -964,6 +894,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Data\DTO\" />
     <Folder Include="Dokumanlar\TolgaKecik\" />
     <Folder Include="Genel\Thumbnails\" />
     <Folder Include="Resim\" />

@@ -3,7 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GAZIConnectionString %>" SelectCommand="SELECT [TemaId], [TemaAdi], [TemaThumbnailPath], [TemaPath] FROM [Temalar]"></asp:SqlDataSource>
 
     <style>
         .Arkaplanlar{
@@ -16,8 +15,9 @@
 
     </style>
 
-        <telerik:RadListView runat="server" ID="RadListView1" DataSourceID="SqlDataSource1"
-            AllowPaging="true" PageSize="30" DataKeyNames="TemaId" OverrideDataSourceControlSorting="true">
+        <telerik:RadListView runat="server" ID="grdThemes" 
+            AllowPaging="true" PageSize="30"  
+            OnNeedDataSource="grdThemes_NeedDataSource">
 
                 <LayoutTemplate>
                     <div class="Arkaplanlar">

@@ -128,21 +128,21 @@ namespace GaziProje2014
         {
             public void InstantiateIn(Control container)
             {
-                string ConStr = ConfigurationManager.ConnectionStrings["GAZIConnectionString"].ConnectionString;
-                SqlDataAdapter daForm = new SqlDataAdapter("SELECT Id, PId, FormAdi, FormBaslik, FormAciklama, FormIcon FROM Formlar", ConStr);
-                DataTable dtForm = new DataTable();
-                daForm.Fill(dtForm);
+                //string ConStr = ConfigurationManager.ConnectionStrings["GAZIConnectionString"].ConnectionString;
+                //SqlDataAdapter daForm = new SqlDataAdapter("SELECT Id, PId, FormAdi, FormBaslik, FormAciklama, FormIcon FROM Formlar", ConStr);
+                //DataTable dtForm = new DataTable();
+                //daForm.Fill(dtForm);
 
-                RadTreeView radTreeView = new RadTreeView();
-                radTreeView.ID = "radTreeView1";
-                radTreeView.DataFieldID = "Id";
-                radTreeView.DataFieldParentID = "PId";
-                radTreeView.DataNavigateUrlField = "FormAdi";
-                radTreeView.DataTextField = "FormBaslik";
-                radTreeView.DataValueField = "Id";           
+                //RadTreeView radTreeView = new RadTreeView();
+                //radTreeView.ID = "radTreeView1";
+                //radTreeView.DataFieldID = "Id";
+                //radTreeView.DataFieldParentID = "PId";
+                //radTreeView.DataNavigateUrlField = "FormAdi";
+                //radTreeView.DataTextField = "FormBaslik";
+                //radTreeView.DataValueField = "Id";
 
-                radTreeView.DataSource = dtForm;             
-                container.Controls.Add(radTreeView);           
+                //radTreeView.DataSource = dtForm;
+                //container.Controls.Add(radTreeView);
             }
 
         }

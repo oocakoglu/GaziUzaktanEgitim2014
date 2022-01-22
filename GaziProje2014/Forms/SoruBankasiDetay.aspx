@@ -74,8 +74,7 @@
             <ItemTemplate>                  
                     <fieldset class="fieldsetForm">
                         <p>
-                        <legend class="legendForm">&nbsp;Soru&nbsp;</legend>
-    <%--                             <a href='<%# "ResimGoruntule.aspx?ResimAdi=images/"+ Eval("DogruCvp")+ "&genislik=599" %>' title=""><%# Eval("DogruCvp") %></a>--%>                            
+                        <legend class="legendForm">&nbsp;Soru&nbsp;</legend>                         
                         <asp:Image ID="imgSoruResim" runat="server" ImageUrl='<%# Eval("SoruResim") %>' /><br />                                                      
                         &nbsp;<asp:Label ID="lblSoruId" runat="server" Text='<%# Eval("SoruId") %>' Visible="false" />
                         &nbsp;<asp:Label ID="lblOgretmenDersId" runat="server" Text='<%# Eval("OgretmenDersId") %>' Visible="false" />
@@ -95,8 +94,6 @@
                         &nbsp;<asp:Label ID="Cvp5Label" runat="server" Text='<%# Eval("Cvp5") %>'  Visible="false"/><br />                               
                         <telerik:RadButton ID="btnSoruDuzenle" runat="server" Text="Soruyu Düzenle" OnClick="btnSoruDuzenle_Click"></telerik:RadButton>
                         <telerik:RadButton ID="btnSoruCikar" runat="server" Text="Soruyu Sil"></telerik:RadButton>
-    <%--                    <telerik:RadButton ID="RadButton1" runat="server" Text="Soruyu Düzenle" OnClick="btnSoruDuzenle_Click"></telerik:RadButton>
-                        <telerik:RadButton ID="RadButton2" runat="server" Text="Soruyu Sınavdan Çıkar" OnClick="btnSoruCikar_Click"></telerik:RadButton>--%>
                     </fieldset>                 
             </ItemTemplate>
             <EmptyDataTemplate>

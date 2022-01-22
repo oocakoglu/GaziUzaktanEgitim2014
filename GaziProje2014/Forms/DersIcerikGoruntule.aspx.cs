@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using GaziProje2014.Data;
+using GaziProje2014.Data.Models;
 
 namespace GaziProje2014.Forms
 {
@@ -21,7 +22,7 @@ namespace GaziProje2014.Forms
                 {
                     int icerikId = Convert.ToInt32(Session["DersIcerikId"]);
 
-                    GAZIEntities gaziEntities = new GAZIEntities();
+                    GAZIDbContext gaziEntities = new GAZIDbContext();
                     DersIcerikler dersIcerikler = gaziEntities.DersIcerikler.Where(q => q.IcerikId == icerikId).FirstOrDefault();
                     if (dersIcerikler.IcerikTip.Value == 1)
                     {

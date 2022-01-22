@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GaziProje2014.Forms {
-    
-    
-    public partial class Dersler {
-        
+namespace GaziProje2014.Forms
+{
+
+
+    public partial class Dersler
+    {
+
         /// <summary>
         /// txtDersAdi control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace GaziProje2014.Forms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadTextBox txtDersAdi;
-        
+
         /// <summary>
         /// RadButton1 control.
         /// </summary>
@@ -29,23 +31,14 @@ namespace GaziProje2014.Forms {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadButton RadButton1;
-        
+
         /// <summary>
-        /// RadGrid1 control.
+        /// grdDersler control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadGrid RadGrid1;
-        
-        /// <summary>
-        /// SqlDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::Telerik.Web.UI.RadGrid grdDersler;
     }
 }

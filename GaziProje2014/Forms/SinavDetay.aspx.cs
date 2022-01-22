@@ -43,7 +43,7 @@ namespace GaziProje2014.Forms
 
         private void FillForm(int SinavId)
         {
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
 
             //** Ana Bilgi
             var sinav = gaziEntities.Sinav.Where(q => q.SinavId == SinavId).FirstOrDefault();
@@ -141,8 +141,8 @@ namespace GaziProje2014.Forms
                 Label lblSinavDetayId = ((Label)Item.FindControl("lblSinavDetayId"));
                 int sinavDetayId = Convert.ToInt32(lblSinavDetayId.Text);
 
-                GAZIEntities gaziEntities = new GAZIEntities();
-                Data.SinavDetay sinavDetay = gaziEntities.SinavDetay.Where(q => q.SinavDetayId == sinavDetayId).FirstOrDefault();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
+                Data.Models.SinavDetay sinavDetay = gaziEntities.SinavDetay.Where(q => q.SinavDetayId == sinavDetayId).FirstOrDefault();
                 gaziEntities.SinavDetay.Remove(sinavDetay);
                 gaziEntities.SaveChanges();
                 FillForm(sinavId);
@@ -155,8 +155,8 @@ namespace GaziProje2014.Forms
          
             if (CheckValues())
             {
-                GAZIEntities gaziEntities = new GAZIEntities();
-                Data.Sinav sinav = null;
+                GAZIDbContext gaziEntities = new GAZIDbContext();
+                Data.Models.Sinav sinav = null;
                 if ((hdnSinavId.Value != "") && (hdnSinavId.Value != "0"))
                 {
                     int sinavId = Convert.ToInt32(hdnSinavId.Value);
@@ -164,7 +164,7 @@ namespace GaziProje2014.Forms
                 }
                 else
                 {
-                    sinav = new Data.Sinav();
+                    sinav = new Data.Models.Sinav();
                     gaziEntities.Sinav.Add(sinav);
 
                     sinav.KayitTrh = DateTime.Now;

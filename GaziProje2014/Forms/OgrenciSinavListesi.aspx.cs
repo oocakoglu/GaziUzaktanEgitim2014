@@ -28,7 +28,7 @@ namespace GaziProje2014.Forms
         {
             int kullaniciId = Convert.ToInt32(Session["KullaniciId"].ToString());
            
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             var sinavListesi = (from s in gaziEntities.Sinav 
                                 where s.BaslangicTarihi <= DateTime.Now && s.BitisTarihi >= DateTime.Now
                                 from grlsnv in gaziEntities.OgrenciSinav.Where(q => q.SinavId == s.SinavId && q.OgrenciId == kullaniciId).DefaultIfEmpty()

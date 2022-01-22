@@ -55,7 +55,7 @@ namespace GaziProje2014.Forms
 
             sqlText = sqlText + "ORDER BY DersAlanOgrenci DESC ";
 
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             List<AcilanDers> acilanDersler = gaziEntities.Database.SqlQuery<AcilanDers>(sqlText).ToList();
 
             grdOgrenciDersSecim.DataSource = acilanDersler;

@@ -14,7 +14,7 @@ namespace GaziProje2014.Forms
         {
             if (!IsPostBack)
             {
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 var duyurular = (from di in gaziEntities.DersIcerikler
                                  from od in gaziEntities.OgretmenDersler.Where(q => q.OgretmenDersId == di.OgretmenDersId).DefaultIfEmpty()
                                  from d in gaziEntities.Dersler.Where(q => q.DersId == od.DersId).DefaultIfEmpty()
@@ -32,7 +32,7 @@ namespace GaziProje2014.Forms
             if (grdIcerikBasliklar.SelectedItems.Count > 0)
             {
                 int icerikId = (int)grdIcerikBasliklar.SelectedValues["IcerikId"];
-                GAZIEntities gaziEntities = new GAZIEntities();
+                GAZIDbContext gaziEntities = new GAZIDbContext();
                 var dersicerik = gaziEntities.DersIcerikler.Where(q => q.IcerikId == icerikId).FirstOrDefault();
                 
                 hdnIcerikId.Value = dersicerik.IcerikId.ToString();
@@ -69,7 +69,7 @@ namespace GaziProje2014.Forms
         protected void btnKaydet_Click(object sender, EventArgs e)
         {
             int icerikId = Convert.ToInt32(hdnIcerikId.Value);
-            GAZIEntities gaziEntities = new GAZIEntities();
+            GAZIDbContext gaziEntities = new GAZIDbContext();
             var dersicerik = gaziEntities.DersIcerikler.Where(q => q.IcerikId == icerikId).FirstOrDefault();
 
             dersicerik.GenelIcerik = chkPublic.Checked;
