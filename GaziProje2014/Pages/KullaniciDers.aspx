@@ -15,7 +15,7 @@
 
  <telerik:RadSplitter ID="wrapperSplitter" runat="server" Width="100%" Height="100%" Orientation="Horizontal">
       
-        <telerik:RadPane ID="Header" runat="server" Height="30px" CssClass="pnlTip">
+        <telerik:RadPane ID="DersHeader" runat="server" Height="30px" CssClass="pnlTip">
             <div >
                 <telerik:RadDropDownList ID="RadDropDownList2" runat="server" Width="200px" DropDownWidth="200px"
                     DropDownHeight="200px"  DataTextField="KullaniciTipAdi" DefaultMessage="Seçiniz..."

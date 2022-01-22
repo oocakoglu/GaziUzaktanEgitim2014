@@ -55,22 +55,7 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.4.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.4.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.4.2.0\lib\net45\Microsoft.Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.4.2.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -95,10 +80,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Telerik.Web.Design, Version=2014.1.403.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET AJAX Q1 2014\Bin45\Telerik.Web.Design.dll</HintPath>
-    </Reference>
     <Reference Include="Telerik.Web.Device.Detection">
       <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET AJAX Q1 2014\Bin45\Telerik.Web.Device.Detection.dll</HintPath>
     </Reference>
@@ -184,20 +165,6 @@
     <Content Include="Forms\OnayBekleyenDersler.aspx" />
     <Content Include="Kurulum\GAZI.sql" />
     <Content Include="Kurulum\Kurulum.aspx" />
-    <Content Include="LCSK\Agent.html" />
-    <Content Include="LCSK\agent.js" />
-    <Content Include="LCSK\assets\css\bootstrap-theme.min.css" />
-    <Content Include="LCSK\assets\css\bootstrap.min.css" />
-    <Content Include="LCSK\assets\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="LCSK\assets\js\bootstrap.min.js" />
-    <Content Include="LCSK\assets\js\jquery-2.1.1.min.js" />
-    <Content Include="LCSK\assets\js\jquery.signalR-2.1.1.min.js" />
-    <Content Include="LCSK\assets\js\jquery.timeago.js" />
-    <Content Include="LCSK\assets\sounds\newchat.mp3" />
-    <Content Include="LCSK\assets\sounds\newmsg.mp3" />
-    <Content Include="LCSK\chat.js" />
-    <Content Include="LCSK\Install.html" />
-    <Content Include="LCSK\install.js" />
     <Content Include="Pages\BasicTools.xml" />
     <Content Include="Pages\Deneme.aspx" />
     <Content Include="Pages\Dersler.aspx" />
@@ -215,9 +182,6 @@
     <Content Include="Pages\tolgaDeneme.aspx" />
     <Content Include="Pages\TolgaDeneme_Datayok.aspx" />
     <Content Include="Pages\tolga_Sinav_Detay.aspx" />
-    <Content Include="LCSK\assets\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="LCSK\assets\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="LCSK\assets\fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -781,9 +745,6 @@
     <Compile Include="Kurulum\Kurulum.aspx.designer.cs">
       <DependentUpon>Kurulum.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LCSK\Agent.cs" />
-    <Compile Include="LCSK\ChatHub.cs" />
-    <Compile Include="LCSK\Startup.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Pages\Deneme.aspx.cs">
       <DependentUpon>Deneme.aspx</DependentUpon>

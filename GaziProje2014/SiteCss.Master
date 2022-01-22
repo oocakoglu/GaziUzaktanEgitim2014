@@ -25,14 +25,7 @@
         <div id="header">
             <div id="logo">
             </div>
-            <%-- 
-            <div style="float: right; margin-top: 10px; margin-right: 10px;">
-                <asp:imagebutton runat="server" Id="CikisButton" ImageUrl="~/Style/Cikis.png" OnClick="CikisButton_Click"></asp:imagebutton>
-                <br />
-                <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="true" OnSkinChanged="QsfSkinManager_SkinChanged" />
-                <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All" EnableRoundedCorners="false" />
-            </div>   
-            --%>     
+   
                 <asp:imagebutton runat="server" Id="CikisButton" ImageUrl="~/Style/Cikis.png" OnClick="CikisButton_Click"></asp:imagebutton>
                 <br />
                 <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="true" OnSkinChanged="QsfSkinManager_SkinChanged" />
@@ -57,11 +50,6 @@
         <telerik:RadNotification ID="RadNotification1" runat="server" EnableRoundedCorners="true"
             EnableShadow="true" Text="Sample content" Title="Bilgilendirme" Width="300" Height="100">
         </telerik:RadNotification>
-
-        <script src="/LCSK/assets/js/jquery-2.1.1.min.js" type="text/javascript"></script>
-        <script src="/LCSK/assets/js/jquery.signalR-2.1.1.min.js" type="text/javascript"></script>
-        <script src="/signalr/hubs" type="text/javascript"></script>
-        <script src="/LCSK/chat.js" type="text/javascript"></script>
 
     </form>
 </body>

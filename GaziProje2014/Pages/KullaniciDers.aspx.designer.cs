@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GaziProje2014.Pages {
-    
-    
-    public partial class KullaniciDers {
-        
+namespace GaziProje2014.Pages
+{
+
+
+    public partial class KullaniciDers
+    {
+
         /// <summary>
         /// wrapperSplitter control.
         /// </summary>
@@ -20,16 +22,16 @@ namespace GaziProje2014.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadSplitter wrapperSplitter;
-        
+
         /// <summary>
-        /// Header control.
+        /// DersHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadPane Header;
-        
+        protected global::Telerik.Web.UI.RadPane DersHeader;
+
         /// <summary>
         /// RadDropDownList2 control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace GaziProje2014.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadDropDownList RadDropDownList2;
-        
+
         /// <summary>
         /// Button2 control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace GaziProje2014.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
-        
+
         /// <summary>
         /// Content control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace GaziProje2014.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadPane Content;
-        
+
         /// <summary>
         /// RadSplitter1 control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace GaziProje2014.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadSplitter RadSplitter1;
-        
+
         /// <summary>
         /// RadPane1 control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace GaziProje2014.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadPane RadPane1;
-        
+
         /// <summary>
         /// RadGrid1 control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace GaziProje2014.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadGrid RadGrid1;
-        
+
         /// <summary>
         /// RadSplitbar1 control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace GaziProje2014.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadSplitBar RadSplitbar1;
-        
+
         /// <summary>
         /// contentPane control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace GaziProje2014.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadPane contentPane;
-        
+
         /// <summary>
         /// RadGrid2 control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace GaziProje2014.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Telerik.Web.UI.RadGrid RadGrid2;
-        
+
         /// <summary>
         /// SqlKullanicilar control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace GaziProje2014.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlKullanicilar;
-        
+
         /// <summary>
         /// SqlDataSourceKullaniciTipi control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace GaziProje2014.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceKullaniciTipi;
-        
+
         /// <summary>
         /// SqlDataSourceDersler control.
         /// </summary>

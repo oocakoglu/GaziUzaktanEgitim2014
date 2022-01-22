@@ -84,52 +84,6 @@
             <telerik:RadPane ID="Footer" runat="server" Height="30px" CssClass="AltPanel"></telerik:RadPane>
         </telerik:RadSplitter>
 
-<%--        <telerik:RadSplitter ID="Radsplitter6" runat="server" Height="100%" Width="100%" Orientation="Horizontal">
-            <telerik:RadPane ID="Radpane11" runat="server" Height="80" CssClass="UstPanel">
-                <div class="logo">
-                </div>
-
-
-                <div style="float: right; margin-top: 10px; margin-right: 10px;">
-                    
-                    <telerik:RadSkinManager ID="QsfSkinManager" runat="server" ShowChooser="true" />
-                    <telerik:RadFormDecorator ID="QsfFromDecorator" runat="server" DecoratedControls="All"
-                        EnableRoundedCorners="false" />
-                </div>
-
-            </telerik:RadPane>
-            <telerik:RadPane ID="Radpane12" runat="server" Scrolling="None" >--%>
-<%--                <telerik:RadSplitter ID="RadSplitter1" runat="server" Height="100%" Width="100%" Orientation="Horizontal">
-                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                    </asp:ContentPlaceHolder>
-                </telerik:RadSplitter>--%>
-<%--                <telerik:RadSplitter ID="RadSplitter1" runat="server" Height="100%" Width="100%">
-                    <telerik:RadPane ID="RadPane1" runat="server" Width="20%" Height="100%">
-                        <div class="qsf-demo-canvas">
-                            <telerik:RadPanelBar runat="server" ID="RadPanelBar1"  Height="100%" Width="100%"  ExpandMode="FullExpandedItem" >
-                               
-                            </telerik:RadPanelBar>
-                        </div>
-                    </telerik:RadPane>
-                    <telerik:RadSplitBar ID="RadSplitbar1" runat="server" CollapseMode="Forward">
-                    </telerik:RadSplitBar>
-                    <telerik:RadPane ID="contentPane" runat="server"  Width="80%" Height="100%">
-                       <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                       </asp:ContentPlaceHolder>
-                    </telerik:RadPane>
-                   
-                </telerik:RadSplitter>--%>
-
-
-
-<%--            </telerik:RadPane>
-            <telerik:RadPane ID="Radpane3" runat="server" Height="40" CssClass="AltPanel">
-                Bottom Pane
-            </telerik:RadPane>
-        </telerik:RadSplitter>--%>
-
-	
-
     </form>
 </body>
 </html>
